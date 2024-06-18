@@ -1,5 +1,11 @@
+
 import { GetServerSideProps } from 'next';
-import { withSSRSession, useAuth } from '@frontegg/nextjs';
+import Image from 'next/image'
+
+import { withSSRSession } from '@frontegg/nextjs/pages';
+import { AdminPortal } from '@frontegg/nextjs'
+import {useAuth } from '@frontegg/nextjs';
+
 
 export default function MyPage({ products }) {
   const {user} = useAuth();
@@ -11,12 +17,25 @@ export default function MyPage({ products }) {
     window.location.href = `${baseUrl}/account/logout`;
   };
 
+  const handleClick = () => {
+    AdminPortal.show();
+  };
+  
   return (
     <div>
       <h1>My Page</h1>
        {products}
       <div>
-        <img src={user?.profilePictureUrl} alt={user?.name}/>
+        <Image 
+          src={user?.profilePictureUrl} 
+          alt={user?.name}
+          width={50}
+          height={50}
+          
+                />
+      </div>
+      <div>
+        <button onClick={handleClick}>Settings</button>
       </div>
       <div>
         <span>Logged in as: {user?.name}</span>

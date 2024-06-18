@@ -9,8 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@frontegg/nextjs": "^6.7.4",
-    "next": "12.1.6",
+    "@frontegg/nextjs": "^8.0.22",
+    "next": "^14.2.4",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },

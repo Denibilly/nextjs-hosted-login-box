@@ -1,4 +1,5 @@
-import { withFronteggApp } from '@frontegg/nextjs';
+import { withFronteggApp } from '@frontegg/nextjs/pages';
+import type { AppProps } from 'next/app'
 
 function CustomApp({ Component, pageProps }: AppProps) {
   return <Component {...pageProps} />;
