@@ -2,7 +2,22 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['localhost', "www.gravatar.com"]
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "localhost",
+        pathname: '**',
+      },
+      {
+        protocol: "https",
+        hostname: "**",
+        pathname: '**',
+      },
+    ],
+    
+  },
+  env: {
+    BASE_URL: process.env.FRONTEGG_APP_URL,
   }
 }
 
